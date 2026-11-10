@@ -112,5 +112,7 @@ resolveBtn.addEventListener('click', () => {
         grid.push(row);
     });
 
+    alert(JSON.stringify(grid));
+
     alert(JSON.stringify(resolve(grid)));
 });

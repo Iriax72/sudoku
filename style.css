@@ -17,7 +17,12 @@ body {
     border: 2px solid black;
 }
 
+#HTMLGrid tr {
+    padding: 0;
+}
+
 input {
+    margin: 0;
     border-radius: 0;
     max-width: calc((80vw - 9*2px)/ 9);
 }
