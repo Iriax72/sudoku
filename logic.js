@@ -1,5 +1,6 @@
-const n = null;
+const resolveBtn = document.querySelector('#resolve-btn');
 
+const n = null;
 const grid = [
     [n, 1, n, 5, 2, n, 4, 3, n],
     [n, n, 8, n, n, 6, n, n, n],
@@ -98,4 +99,6 @@ function resolve(gridRef) {
     return grid;
 }
 
-alert(JSON.stringify(resolve(grid)));
+resolveBtn.addEventListener('click', () => {
+    alert(JSON.stringify(resolve(grid)));
+});
