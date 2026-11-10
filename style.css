@@ -1,0 +1,10 @@
+#HTMLGrid {
+    max-width: 80vh;
+    max-height: 80vw;
+    border-collapse: collapse;
+    background-color: beige;
+}
+
+#HTMLGrid th {
+    border: 4px solid black;
+}
