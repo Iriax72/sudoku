@@ -1,7 +1,7 @@
 const resolveBtn = document.querySelector('#resolve-btn');
 
 const n = null;
-const grid = [
+const gridTest = [
     [n, 1, n, 5, 2, n, 4, 3, n],
     [n, n, 8, n, n, 6, n, n, n],
     [5, n, 3, 7, 9, n, 2, n, n],
@@ -100,5 +100,17 @@ function resolve(gridRef) {
 }
 
 resolveBtn.addEventListener('click', () => {
+    const grid = [];
+    const HTMLGrid = document.querySelector('#HTMLGrid');
+    const HTMLRows = [...HTMLGrid.querySelectorAll('tr')];
+    HTMLRows.forEach(HTMLRow => {
+        const row = [];
+        const tds = [...HTMLRow.querySelectorAll('td')];
+        tds.forEach(td => {
+            row.push(td.querySelector('input').value);
+        });
+        grid.push(row);
+    });
+
     alert(JSON.stringify(resolve(grid)));
 });
