@@ -107,7 +107,7 @@ resolveBtn.addEventListener('click', () => {
         const row = [];
         const tds = [...HTMLRow.querySelectorAll('td')];
         tds.forEach(td => {
-            row.push(td.querySelector('input').value);
+            row.push(td.querySelector('input').value ?? null);
         });
         grid.push(row);
     });
