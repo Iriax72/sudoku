@@ -1,4 +1,5 @@
 import { Grid } from "./Grid.js";
+import { resolveByPossibilities } from "./algo/possibilities.js";
 
 const resolveBtn = document.querySelector('#resolve-btn');
 
@@ -29,59 +30,9 @@ function remove(arrayRef, item) {
 }
 
 /*
-function getRow(grid, rowNumber) {
-    return grid[rowNumber];
-}
-
-function getColumn(grid, colNumber) {
-    const col = [];
-    grid.forEach(row => {
-        col.push(row[colNumber]);
-    })
-    return col;
-}
-
-function getSquare(grid, x, y) {
-    return grid[y][x];
-}
-
-function getBlock(grid, x, y) {
-    const block = [
-        [n, n, n],
-        [n, n, n],
-        [n, n, n]
-    ];
-    const startX = Math.floor(x / 3) * 3;
-    const startY = Math.floor(y / 3) * 3;
-    for (let j = 0; j < 3; j++) {
-        for (let i = 0; i < 3; i++) {
-            block[j][i] = grid[startY + j][startX + i];
-        }
-    }
-    return block;
-}
-
-function digitsInSameBlock(grid, x, y) {
-    const ret = [];
-    const block = getBlock(grid, x, y);
-    for (let j = 0; j < block.length; j++) {
-        for (let i = 0; i < block[j].length; i++) {
-            const digit = block[j][i];
-            if (digit !== null) {
-                ret.push(digit);
-            }
-        }
-    }
-    return ret;
-}
-
-function isCompleted(grid) {
-    return grid.every(row => row.every(square => square !== null));
-}
-*/
-
 function resolve(grid) {
-    while (!grid.isCompleted()) {
+    while (!grid.isCompleted() && addedDigit) {
+        let addedDigit = false;
         for (let y = 0; y < 9; y++) {
             for (let x = 0; x < 9; x++) {
                 if (grid.getSquare(x, y) !== null) { continue; }
@@ -94,6 +45,7 @@ function resolve(grid) {
                     ) { possibilities = remove(possibilities, digit); }
                     if (possibilities.length === 1) {
                         grid.setValue(x, y, possibilities[0]);
+                        addedDigit = true;
                     }
                 });
             }
@@ -101,6 +53,7 @@ function resolve(grid) {
     }
     return grid;
 }
+*/
 
 resolveBtn.addEventListener('click', () => {
     const grid = [];
@@ -118,5 +71,5 @@ resolveBtn.addEventListener('click', () => {
 
     alert(JSON.stringify(grid));
 
-    alert(JSON.stringify(resolve(new Grid(gridTest))));
+    alert(JSON.stringify(resolveByPossibilities(new Grid(gridTest))));
 });
