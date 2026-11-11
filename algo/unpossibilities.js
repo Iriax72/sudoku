@@ -17,9 +17,9 @@ export function possibilitieTable(grid) {
                     grid.getRow(y).includes(digit)
                     || grid.getColumn(x).includes(digit)
                     || grid.digitsInSameBlock(x, y).includes(digit)
-                ) { squarePossibilities = remove(squarePossibilities, digit); }
-                possibilities[y][x] = squarePossibilities;
+                ) { squarePossibilities = squarePossibilities.filter(el => el !== digit); }
             });
+            possibilities[y][x] = squarePossibilities;
         }
     }
     return possibilities;
