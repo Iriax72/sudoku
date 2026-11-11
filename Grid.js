@@ -3,6 +3,20 @@ export class Grid {
         this.grid = grid;
     }
 
+    static voidGrid() {
+        return [
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+        ];
+    }
+
     isCompleted() {
         return this.grid.every(
             row => row.every(
@@ -46,6 +60,16 @@ export class Grid {
         }
         return block;
     }
+
+    /*
+    getBlocks() {
+        return [
+            this.getBlockOf(0, 0), this.getBlockOf(3, 0), this.getBlockOf(6, 0),
+            this.getBlockOf(0, 3), this.getBlockOf(3, 3), this.getBlockOf(6, 3),
+            this.getBlockOf(0, 6), this.getBlockOf(3, 6), this.getBlockOf(6, 6)
+        ]
+    }
+    */
 
     digitsInSameBlock(x, y) {
         const ret = [];

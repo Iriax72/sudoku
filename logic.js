@@ -1,5 +1,6 @@
 import { Grid } from "./Grid.js";
 import { resolveByPossibilities } from "./algo/possibilities.js";
+import { possibilitieTable } from "./algo/unpossibilities.js";
 
 const resolveBtn = document.querySelector('#resolve-btn');
 const testChexbox = document.querySelector('#test');
@@ -21,7 +22,7 @@ const digits = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 resolveBtn.addEventListener('click', () => {
     if (testChexbox.checked) {
-        alert(JSON.stringify(resolveByPossibilities(gridTest)));
+        alert(JSON.stringify(possibilitieTable(gridTest)));
         return;
     }
     const grid = [];
@@ -38,5 +39,5 @@ resolveBtn.addEventListener('click', () => {
     });
 
     alert(JSON.stringify(grid));
-    alert(JSON.stringify(resolveByPossibilities(new Grid(grid))));
+    alert(JSON.stringify(possibilitieTable(new Grid(grid))));
 });
