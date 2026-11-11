@@ -18,6 +18,7 @@ const gridTest = [
 
 const digits = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+/*
 function remove(arrayRef, item) {
     const array = [...arrayRef];
     const index = array.indexOf(item);
@@ -29,7 +30,6 @@ function remove(arrayRef, item) {
     }
 }
 
-/*
 function resolve(grid) {
     while (!grid.isCompleted() && addedDigit) {
         let addedDigit = false;
