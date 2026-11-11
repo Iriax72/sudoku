@@ -2,9 +2,8 @@ import { Grid } from "./Grid.js";
 
 const resolveBtn = document.querySelector('#resolve-btn');
 
-/*
 const n = null;
-const gridTest = new Grid([
+const gridTest = [
     [n, 1, n, 5, 2, n, 4, 3, n],
     [n, n, 8, n, n, 6, n, n, n],
     [5, n, 3, 7, 9, n, 2, n, n],
@@ -14,8 +13,7 @@ const gridTest = new Grid([
     [n, 7, n, n, 8, n, n, 1, n],
     [n, n, n, 9, 6, n, 7, n, 4],
     [n, n, n, 3, n, n, 6, n, n]
-]);
-*/
+];
 
 const digits = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -120,5 +118,5 @@ resolveBtn.addEventListener('click', () => {
 
     alert(JSON.stringify(grid));
 
-    alert(JSON.stringify(resolve(new Grid(grid))));
+    alert(JSON.stringify(resolve(new Grid(gridTest))));
 });
